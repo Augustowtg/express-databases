@@ -1,0 +1,21 @@
+{
+  "name": "express-mongo-redis",
+  "version": "1.0.0",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon src/server"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mogoose": "^0.0.1-security",
+    "axios": "^0.19.2",
+    "ioredis": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

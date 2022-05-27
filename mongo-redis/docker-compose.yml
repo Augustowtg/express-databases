@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    container_name: express-redis
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    environment:
+      - REDIS_HOST=redis-cache
+      - API_PORT=3000
+      - MONGODB_API=mongodb://localhost:27017
+    depends_on:
+      - redis-cache
+  redis-cache:
+    image: redis
+    container_name: redis
+    restart: on-failure
+    volumes:
+      - redis-data:/data
+volumes:
+  redis-data:
+networks:
+  cache-spotify-network:
